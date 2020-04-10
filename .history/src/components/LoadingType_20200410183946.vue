@@ -4,7 +4,7 @@
 <div>
     <div class="mt-3">Loading:</div>
     <div>
-    <b-form-select v-model="selected_loading">
+    <b-form-select v-model="selected_loading" align="center">
         <option value="Select loading">Select loading type</option>
         <option :value="[l.occupancy, l.use, l.uniformloadpsf]" v-for="l in firstliveload">{{l.occupancy +" "+ l.use +" : "+ l.uniformloadpsf}} psf </option>
     </b-form-select>

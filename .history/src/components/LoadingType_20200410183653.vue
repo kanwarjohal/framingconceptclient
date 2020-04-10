@@ -2,6 +2,13 @@
 
 <template>
 <div>
+    <!-- <div class="mt-3">Building Type:</div>
+    <div>
+    <b-form-select v-model="selected_building">
+        <option value="Select building">Select building type.</option>
+        <option :value="l.loading_type" v-for="l in firstliveload" :key="l.loading">{{l.loading_type}}</option>
+    </b-form-select>
+    </div> -->
     <div class="mt-3">Loading:</div>
     <div>
     <b-form-select v-model="selected_loading">

@@ -2,7 +2,7 @@
 
 <template>
 <div>
-    <div class="mt-3">Loading:</div>
+    <div class="mt-3" align="center">Loading:</div>
     <div>
     <b-form-select v-model="selected_loading">
         <option value="Select loading">Select loading type</option>

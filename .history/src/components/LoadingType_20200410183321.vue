@@ -2,6 +2,13 @@
 
 <template>
 <div>
+    <!-- <div class="mt-3">Building Type:</div>
+    <div>
+    <b-form-select v-model="selected_building">
+        <option value="Select building">Select building type.</option>
+        <option :value="l.loading_type" v-for="l in firstliveload" :key="l.loading">{{l.loading_type}}</option>
+    </b-form-select>
+    </div> -->
     <div class="mt-3">Loading:</div>
     <div>
     <b-form-select v-model="selected_loading">
@@ -22,7 +29,7 @@
         <b-button v-on:click="postPost">Run</b-button>
     </div>
     <div>
-        <b-img center src="hollowcoresections.png" width="450" height="150"></b-img>
+        <img center src="hollowcoresections.png" fluid alt="Responsive image">
     </div>
     <div>
     <b-table striped hover :items="hollowcoreitems" :fields="fields"></b-table>
