@@ -1,17 +1,55 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header />
+    <b-container class="bv-example-row">
+      <!-- <b-row>
+        <b-col sm="6" offset="3">
+          <BuildingType /> 
+        </b-col>
+      </b-row>
+      -->
+      <b-row> 
+        <b-col sm="6" offset="3">
+          <LoadingType :firstliveload="liveloads"
+          /> 
+        </b-col>
+      </b-row>
+    </b-container>
+
+
+    
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/Header.vue'
+// import BuildingType from './components/BuildingType.vue'
+import LoadingType from './components/LoadingType.vue'
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Header,
+    // BuildingType,
+    LoadingType
+  },
+  data() {
+    return{
+      liveloads: []
+    }
+  },
+  mounted: function() {
+    fetch('https://strukanwar.herokuapp.com/asceloading', {
+      method: "get"
+      })
+      .then((response) => {
+        return response.json()
+      })
+      .then((jsonData) => {
+        this.liveloads = jsonData.loading;
+        //console.log("test", jsonData.loading)
+      })
   }
 }
 </script>

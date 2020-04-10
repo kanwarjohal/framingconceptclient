@@ -8,7 +8,14 @@ import VueAxios from 'vue-axios'
 
 // Install BootstrapVue
 Vue.use(BootstrapVue)
-Vue.prototype.$http = axios
+
+Vue.use({
+  install (Vue) {
+  Vue.prototype.$api = axios.create({
+    baseURL: 'http://localhost:8000/api/v1/'
+  })
+}
+})
 
 Vue.config.productionTip = false
 
